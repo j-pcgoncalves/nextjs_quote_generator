@@ -9,7 +9,13 @@ import {
   BackgroundImage2, 
   FooterCon, 
   FooterLink, 
+  GenerateQuoteButton, 
+  GenerateQuoteButtonText, 
   GradientBackgroundCon, 
+  QuoteGeneratorCon, 
+  QuoteGeneratorInnerCon, 
+  QuoteGeneratorSubTitle, 
+  QuoteGeneratorTitle, 
   RedSpan
 } from '@/components/QuoteGenerator/QuoteGeneratorElements'
 
@@ -31,6 +37,28 @@ export default function Home() {
       {/* Background */}
       <GradientBackgroundCon>
 
+        {/* Quote Generator Modal */}
+
+        {/* Quote Generator */}
+        <QuoteGeneratorCon>
+          <QuoteGeneratorInnerCon>
+            <QuoteGeneratorTitle>
+              Daily Inspiration Generator
+            </QuoteGeneratorTitle>
+
+            <QuoteGeneratorSubTitle>
+              Looking for a splash of inspiration? Generate a quote card with a random inspirational quote provided by <FooterLink href="https://zenquotes.io/" target="_blank" rel="noopeneer noreferrer"> ZenQuotes API </FooterLink>.
+            </QuoteGeneratorSubTitle>
+
+            <GenerateQuoteButton>
+              <GenerateQuoteButtonText onClick={null}>
+                Make a Quote
+              </GenerateQuoteButtonText>
+            </GenerateQuoteButton>
+          </QuoteGeneratorInnerCon>
+        </QuoteGeneratorCon>
+
+        {/* Background Images */}
         <BackgroundImage1
           src={Clouds1}
           height="300"
@@ -43,17 +71,12 @@ export default function Home() {
           alt="cloudybackground2"
         />
 
+        {/* Footer */}
         <FooterCon>
           <>
             Quotes Generated: {numberOfQuotes}
             <br />
-            Developed with <RedSpan>♥</RedSpan> by <FooterLink 
-                                  href="https://github.com/j-pcgoncalves" 
-                                  target="_blank" 
-                                  rel="noopener"
-                                > 
-                                  João Gonçalves 
-                                </FooterLink>
+            Developed with <RedSpan>♥</RedSpan> by <FooterLink href="https://github.com/j-pcgoncalves" target="_blank" rel="noopener noreferrer"> João Gonçalves </FooterLink>
           </>
         </FooterCon>
         
