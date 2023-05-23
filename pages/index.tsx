@@ -91,7 +91,14 @@ export default function Home() {
       {/* Background */}
       <GradientBackgroundCon>
 
-        {/* Quote Generator Modal */}
+        <QuoteGeneratorModal
+          open={openGenerator}
+          close={handleCloseGenerator}
+          processingQuote={processingQuote}
+          setProcessingQuote={setProcessingQuote}
+          quoteReceived={quoteReceived}
+          setQuoteReceived={setQuoteReceived}
+        />
 
         {/* Quote Generator */}
         <QuoteGeneratorCon>
