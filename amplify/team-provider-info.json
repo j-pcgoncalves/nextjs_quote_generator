@@ -10,6 +10,11 @@
       "StackName": "amplify-quotegenerator-dev-223214",
       "StackId": "arn:aws:cloudformation:eu-west-1:961297650685:stack/amplify-quotegenerator-dev-223214/255b6080-f8e8-11ed-bb96-02e047f33817",
       "AmplifyAppId": "d3cqp73ga1hj3r"
+    },
+    "categories": {
+      "auth": {
+        "quotegeneratorcec7f236": {}
+      }
     }
   }
 }
