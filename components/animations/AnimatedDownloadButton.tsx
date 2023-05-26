@@ -15,7 +15,7 @@ interface AnimatedDownloadButtonProps {
 const AnimatedDownloadButton = ({ handleDownload }: AnimatedDownloadButtonProps) => {
   return (
     <DownloadQuoteCardCon 
-        // onClick={null}
+        onClick={handleDownload}
     >
         <CenteredLottie
             loop
