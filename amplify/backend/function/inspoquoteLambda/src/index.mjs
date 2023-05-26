@@ -12,7 +12,7 @@ Amplify Params - DO NOT EDIT */
 
 // AWS packages
 import AWS from "aws-sdk";
-const docClient = new AWS.DynamoDB.DocumentClient({ region: "eu-west-1" });
+const docClient = new AWS.DynamoDB.DocumentClient();
 
 // Image generation packages
 import sharp from "sharp";
