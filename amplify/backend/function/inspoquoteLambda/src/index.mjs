@@ -11,14 +11,14 @@ Amplify Params - DO NOT EDIT */
  */
 
 // AWS packages
-const AWS = require("aws-sdk");
-const docClient = new AWS.DynamoDB.DocumentClient();
+import DynamoDB from "aws-sdk";
+const docClient = new DynamoDB.DocumentClient();
 
 // Image generation packages
-const sharp = require("sharp");
-const fetch = require("node-fetch");
-const path = require("path");
-const fs = require("fs");
+import sharp from "sharp";
+import fetch from "node-fetch";
+import { join } from "path";
+import { readFileSync } from "fs";
 
 // Function: update DynamoDB table
 async function updateQuoteDDBObject() {
@@ -48,7 +48,7 @@ async function updateQuoteDDBObject() {
     }
 }
 
-exports.handler = async (event) => {
+export async function handler(event) {
     console.log(`EVENT: ${JSON.stringify(event)}`);
 
     const apiURL = "https://zenquotes.io/api/random";
@@ -142,7 +142,7 @@ exports.handler = async (event) => {
         const timestamp = new Date().toLocaleString().replace(/[^\d]/g, "");
         const svgBuffer = Buffer.from(svgImage);
 
-        const imagePath = path.join("/tmp", "quote-card.png");
+        const imagePath = join("/tmp", "quote-card.png");
         const image = await sharp(selectedBackgroundImage)
             .composite([
                 {
@@ -167,10 +167,10 @@ exports.handler = async (event) => {
                 "Content-Type": "image/png",
                 "Access-Control-Allow-Origin": "*",
             },
-            body: fs.readFileSync(imagePath).toString("base64"),
+            body: readFileSync(imagePath).toString("base64"),
             isBase64Encoded: true,
         };
     }
 
     return await getRandomQuote(apiURL);
-};
+}
