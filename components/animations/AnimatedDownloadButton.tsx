@@ -8,7 +8,11 @@ import {
     DownloadQuoteCardConText
 } from './AnimationsElements'
 
-const AnimatedDownloadButton = () => {
+interface AnimatedDownloadButtonProps {
+    handleDownload: () => void,
+}
+
+const AnimatedDownloadButton = ({ handleDownload }: AnimatedDownloadButtonProps) => {
   return (
     <DownloadQuoteCardCon 
         // onClick={null}
