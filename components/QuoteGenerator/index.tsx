@@ -24,8 +24,8 @@ interface QuoteGeneratorModalProps {
     close: () => void,
     processingQuote: boolean,
     setProcessingQuote: React.Dispatch<React.SetStateAction<boolean>>,
-    quoteReceived: String | null,
-    setQuoteReceived: React.Dispatch<React.SetStateAction<String | null>>,
+    quoteReceived: string | null,
+    setQuoteReceived: React.Dispatch<React.SetStateAction<string | null>>,
 }
 
 const style = {
@@ -44,7 +44,7 @@ const QuoteGeneratorModal = ({
     const wiseDevQuote = "If you can center a div, anything is possible.";
     const wiseDevQuoteAuthor = "- a wise senior software engineer."
 
-    const [blobUrl, setBlobUrl] = useState<String | null>(null);
+    const [blobUrl, setBlobUrl] = useState<string | null>(null);
 
     // Function: Handling the download of quote card
     const handleDownload = () => {
