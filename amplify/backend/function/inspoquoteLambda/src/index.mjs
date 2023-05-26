@@ -11,8 +11,8 @@ Amplify Params - DO NOT EDIT */
  */
 
 // AWS packages
-import DynamoDB from "aws-sdk";
-const docClient = new DynamoDB.DocumentClient();
+import AWS from "aws-sdk";
+const docClient = new AWS.DynamoDB.DocumentClient({ region: "eu-west-1" });
 
 // Image generation packages
 import sharp from "sharp";
@@ -135,6 +135,7 @@ export async function handler(event) {
             "./backgrounds/Orangey.png",
         ];
 
+        // Select random image from backgroundImages
         const randomIndex = Math.floor(Math.random() * backgroundImages.length);
         const selectedBackgroundImage = backgroundImages[randomIndex];
 
