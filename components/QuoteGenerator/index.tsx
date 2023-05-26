@@ -13,6 +13,7 @@ import {
 } from './QuoteGeneratorElements';
 import ImageBlob from '../animations/ImageBlob';
 import { ImageBlobCon } from '../animations/AnimationsElements';
+import AnimatedDownloadButton from '../animations/AnimatedDownloadButton';
 
 interface QuoteGeneratorModalProps {
     open: boolean,
@@ -72,7 +73,7 @@ const QuoteGeneratorModal = ({
                             </>
                         }
 
-                        {quoteReceived !== null &&
+                        {quoteReceived === null &&
                             <>
                                 <QuoteGeneratorTitle>
                                     Download your quote!
